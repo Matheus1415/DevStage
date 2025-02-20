@@ -1,8 +1,10 @@
 import { ButtonProps } from "@/interface/buttonsProps";
-
-export function IconButton(props: ButtonProps) {
-    return (
-      <button
-        className="p-1.5 bg-gray-500 text-blue rounded-md cursor-pointer transition-colors duration-300 hover:bg-blue hover:text-gray-900" {...props} />
-    )
-  }
+import {twMerge } from "tailwind-merge";
+export function IconButton({className, ...props}: ButtonProps) {
+  return (
+    <button
+    className={twMerge("p-1.5 bg-gray-500 text-blue rounded-md cursor-pointer transition-colors duration-300 hover:bg-blue hover:text-gray-900", className)}
+      {...props}
+    />
+  );
+}
